@@ -1,3 +1,11 @@
+//Adrian Osorio, AP Computer Science, 9/9/15, CC1 Non-Routine Part B, 310-227-5883, adrianosorio101@gmail.com
+/*
+ Reflection:
+    
+    From the practice done in class I was able to get used to printing strings in the console along with using special characters with the backslash which helped in creating this program. The only aspect of this program that was hard was having to design the character from ascii characters. From this I was able to learn about compiling and running my program from my local terminal. I did not really need any help going through the assignment however it took me around 40 minutes to complete. The most enjoyable part of  this was designing the ascii character since it required me to think about how I was going to represent the character and what  characters woulod be best to complete this challenge. I would redesign this assignment by having students include some use of the special characters that are in java in order to give them more exposure. 
+   
+*/
+
 public class GameTitle {
   public static void main(String[] args) {
     
