@@ -10,71 +10,66 @@ For this particular assignment at the time I think that the Warm up assignments 
 
 //importing Scanner class to retrieve values from console
 import java.util.Scanner;
+import java.lang.*;
+
 
 public class ColorCodes {
     
   //declaring a new instance of the scanner class
-  static Scanner ColorInput = new Scanner(System.in); 
+  static Scanner colorInput = new Scanner(System.in); 
+  
+  
   public static void main(String[] args) {
  
     //Prompting user for data from and converting the input into an integer
     System.out.println("Enter The First Color ");
-    System.out.print("Enter the RGB number from 0-255 for the degree of red: ");
-    int rgb_red_1 = rgb_one.nextInt();
-    System.out.print("Enter the RGB number from 0-255 for the degree of green: ");
-    int rgb_green_1 = rgb_one.nextInt();
-    System.out.print("Enter the RGB number from 0-255 for the degree of blue: ");
-    int rgb_blue_1 = rgb_one.nextInt();
+    System.out.print("Enter the RGB number from 0-16777215 for the degree of red: ");
+    int rgb_format_1 = colorInput.nextInt();
     
     System.out.println("Enter The Second Color ");
-    System.out.print("Enter the RGB number from 0-255 for the degree of red: ");
-    int rgb_red_2 = rgb_one.nextInt();
-    System.out.print("Enter the RGB number from 0-255 for the degree of green: ");
-    int rgb_green_2 = rgb_one.nextInt();
-    System.out.print("Enter the RGB number from 0-255 for the degree of blue: ");
-    int rgb_blue_2 = rgb_one.nextInt();
+    System.out.print("Enter the RGB number from 0-16777215 for the degree of red: ");
+    int rgb_format_2 = colorInput.nextInt();
     
     System.out.println("Enter The Third Color ");
-    System.out.print("Enter the RGB number from 0-255 for the degree of red: ");
-    int rgb_red_3 = rgb_one.nextInt();
-    System.out.print("Enter the RGB number from 0-255 for the degree of green: ");
-    int rgb_green_3 = rgb_one.nextInt();
-    System.out.print("Enter the RGB number from 0-255 for the degree of blue: ");
-    int rgb_blue_3 = rgb_one.nextInt();
+    System.out.print("Enter the RGB number from 0-16777215 for the degree of red: ");
+    int rgb_format_3 = colorInput.nextInt();
     
-    //Calling method formater to convert input into rgb_format and hexadecimal format 
-    formater(rgb_red_1, rgb_green_1, rgb_blue_1);
-    formater(rgb_red_2, rgb_green_2, rgb_blue_2);
-    formater(rgb_red_3, rgb_green_3, rgb_blue_3);
-    formater(rgb_red_1, rgb_green_2, rgb_blue_3);//mixing from the various inputs 
     
+    //Calling method formater to convert input into rgb_format and hexadecimal format
+    int red_Mix = formater(rgb_format_1, 0);
+    int blue_Mix = formater(rgb_format_2, 1);
+    int green_Mix = formater(rgb_format_3, 2);
+    
+    System.out.println("\nThis is the Mixed Color Combonation: rgb("+red_Mix+", " + blue_Mix + ", " + green_Mix + ")");
   }
-  public static void formater(int rgb_red, int rgb_green, int rgb_blue) {
+ 
+  
+  public static int formater(int decimalInput, int colorMixer) {
 
    //if any one of the inputs exceeds the cantExceed variable then it will not run the code
     
-    if(rgb_red <= 255 && rgb_green <= 255 && rgb_blue <= 255) {
-    //this prints out the input that is converted into a range of 0-255 into rgb style
-    
-      System.out.println("\nHere is your color in RGB: rgb("+ rgb_red + ", " + rgb_green + ", " + rgb_blue +")");
-    
-    //this converts the input from decimal to hex using a predefined method
-    
-      String rgbRedHex = Integer.toHexString(rgb_red);
-      String rgbGreenHex = Integer.toHexString(rgb_green);
-      String rgbBlueHex = Integer.toHexString(rgb_blue);
+    if(decimalInput <= 16777215) {
+    //Converts input that is less than or equal to 16777215 to rgb by implementing modulus and division
+      int rgb_Blue = decimalInput % 256;
+      int rgb_Green = (decimalInput / 256) % 256;
+      int rgb_Red = decimalInput / 65536;
+      System.out.println("\nHere is your color in RGB: rgb("+ rgb_Red + ", " + rgb_Green + ", " + rgb_Blue +")");
+      int[] rgb_Values = {rgb_Red, rgb_Green, rgb_Blue};
+     
+   //this prints out the and converts decimal into Hex format
    
-   //this prints out the hex into Hex format
-   
-      System.out.println("\nHere is your color in Hex: #"+rgbRedHex+""+rgbGreenHex+""+rgbBlueHex);
+      String Hex_Output = String.format("%06X", decimalInput); 
+      System.out.println("\nHere is your color in Hex: #" + Hex_Output);
       
-   //Mix the values of the RGB from the input
       
+   //Mix the values of the RGB from the input by returning a specific unit
+   return rgb_Values[colorMixer];
       
     }else{
       //this is a message that the user input exceded the cantExceed variable
         
-      System.out.println("The input you placed exceeds the possible value you can place for this program! " + rgb_red + " " + rgb_green + " " + rgb_blue); 
+      System.out.println("The input you placed exceeds the possible value you can place for this program!");
+      return 0;
       
     }
   
