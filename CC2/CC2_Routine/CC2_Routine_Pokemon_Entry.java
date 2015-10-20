@@ -5,11 +5,12 @@ public class CC2_Routine_Pokemon_Entry {
      Scanner prompt = new Scanner(System.in);
      System.out.println("Whats Your Name");
      String trainerName = prompt.next();
-     System.out.println("You can choose four Pokemon. Either Pikachu, Charmander, Squirtle, or Bulbasaur");
-     String trainerPokemon = prompt.next();
-     System.out.println("Select what level your Pokemon will be ");
+     System.out.println("You can choose four Pokemon. Either Pikachu, Charmander, Squirtle, or Bulbasaur and also the level of the pokemon from 1-15");
+     String trainerPokemon_1 = prompt.next();
      int pokemonLevel = prompt.nextInt();
-     if(Check.Check_Input(trainerName, trainerPokemon, pokemonLevel) == true) {
+     String trainerPokemon = trainerPokemon_1.toLowerCase();
+     
+     if(Check.Check_Input(trainerName, trainerPokemon, pokemonLevel) == true) {//uses output from check to see if logically applicable
          Pokemon_Trainer.createTrainer(trainerName, trainerPokemon, pokemonLevel);
      }
      
@@ -18,7 +19,7 @@ public class CC2_Routine_Pokemon_Entry {
   
 
 }
-class Pokemon_Trainer {
+class Pokemon_Trainer {//class helps create a pokemon trainer object which can be referenced for individual trainers
     
   public static void createTrainer(String name, String pokemon, int level) {
       String Trainer = name;
@@ -32,7 +33,7 @@ class Pokemon_Trainer {
 class Check{
     
   public static boolean Check_Input(String name, String Pokemon, int level) {
-     //var
+     //vars help determine how much has been run
      int p = 0;
      int n = 0;
      int x = 0;
@@ -46,16 +47,16 @@ class Check{
      
      //checks the input placed
      switch (Pokemon) {
-         case "Pikachu": p = 1;
+         case "pikachu": p = 1;
                          break;
-         case "Charmander": 
+         case "charmander": 
                           p = 1;
                          
                          break;
-         case "Squirtle":  p = 1;
+         case "squirtle":  p = 1;
                          
                          break;
-         case "Bulbasaur":  p = 1;
+         case "bulbasaur":  p = 1;
                          
                          break;
          default: p = 0;
@@ -66,19 +67,19 @@ class Check{
      
      if(level <= 15) {
           x = 1;
-          System.out.println("Success");
+          //System.out.println("Success");
          
      } else {
           x = 0;
          System.out.print(" Invalid Level ");
          
      }
-     //checks all output and compares
+     //checks all output and compares to ensure that the user inputs are all correct
      if(p == 1 && n == 1 && x == 1){
-       System.out.println(" You passed the Check ");
+       //System.out.println(" You passed the Check ");
        return true;         
      }else{
-       System.out.println("You Failed the Check");
+       //System.out.println("You Failed the Check");
        return false;
      }
      
