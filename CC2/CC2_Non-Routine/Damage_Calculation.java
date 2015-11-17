@@ -1,6 +1,12 @@
-/*Adrian Osorio AP Computer Science 11/16/15 Assignment #2 310-227-5883 https://sites.google.com/a/esusdstudents.org/adrianosorio101/ adrianosorio101@gmail.com
+/*Adrian Osorio AP Computer Science 11/10/15 Assignment #2 310-227-5883 https://sites.google.com/a/esusdstudents.org/adrianosorio101/ adrianosorio101@gmail.com
   The Program did provide a strong challenge for me since I attempted at first to find a method that would not cause me to be repetitive which 
-  proved to be my downfall since most of those methods used items sucvh as arrays and switches which we were not allowed to use. 
+  proved to be my downfall since most of those methods used items sucvh as arrays and switches which we were not allowed to use. I learned that I can use 
+  multiple scanner statements and from those statements use the method has next to check if there was input placed but this tends to be tricky when
+  dealing with multiple inputs. I also learned that trying the simplest methods first and then trying to  make them more compressed is the best way to 
+  approach most of the problems, I would've needed help with interpreting the errors i recieve since occassioanlly i wondered why certain errors would
+  come up. This I think took me a couple of hours over a couple of days to figure out how to create the best approach.The best part of the Assignment
+  was accompliching it and having it work at its highest potential. If i were to change it then i would have made it so that students would have used a for loop to 
+  accomplish this challenge. 
 */
 
 import java.util.Scanner;
@@ -10,13 +16,12 @@ public class Damage_Calculation {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         System.out.println("Please enter a attack statement");
-        String fullLengthString = in.nextLine();
+        String fullLengthString = in.nextLine();//takes in the phrase in one line
         in.close();
         //Type 2 level 5 Attack 80 Defense 60 Base 20 STAB 1 Critical 2.0 Random 0.9
         //Input string shall be parsed
         String[] dataString = fullLengthString.split(" "); //s[plits the content into strings
-        if(dataString[0].equalsIgnoreCase("type")) {
-          
+        if(dataString[0].equalsIgnoreCase("type")) {//this checks in ifthe key phrases typed are spelled correctly
           if(dataString[2].equalsIgnoreCase("level")) {
             if(dataString[4].equalsIgnoreCase("attack")) {
               if(dataString[6].equalsIgnoreCase("defense")) {
@@ -33,7 +38,8 @@ public class Damage_Calculation {
                          double criticalValue = Double.parseDouble(dataString[13]);
                          double randomValue = Double.parseDouble(dataString[15]);
                          boolean check = false;
-                         if(typeValue > 0 && typeValue <=4) {
+                         if(typeValue > 0 && typeValue <=4) {//these next few if statements check the values to ensure thay fit within the parameters that they must fit in
+                         
                              if(levelValue >= 0 && levelValue <=99) {
                                if(attackValue > 0) {
                                   if(defenseValue > 0) {
