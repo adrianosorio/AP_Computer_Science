@@ -1,4 +1,16 @@
-/**/
+/*Adrian Osorio AP Computer Science 11/10/15 Assignment #2 310-227-5883 https://sites.google.com/a/esusdstudents.org/adrianosorio101/ adrianosorio101@gmail.com
+The warm-up and practice leading up to the assignment did prepare for this especially with creating methods. What I found 
+to be most challenging was or hard was the need to keep a large piece of code organizaed so that each day that I worked on this I would remember
+what a method did since this code got large after a while. From this I was able to learn about global Variaables
+I was also able to learn some important information about scanners and loops which will help me in the future. 
+I began to need help more near the beginning when I was deciding how I was going to store my data for pokemon and trainer
+since I was uncertain whether to create another class and constructor to accomplish that goal but eventually decided on 
+using global variables. The assignment took me 3 hours to accomplish and what I enjoyed most was being able to
+divide my code into multiple methods which allowed me to just have to right one line in the main mathod to get my program running.
+If I had the chance to  assign this assignment I would say students would have to create objects for trainers and 
+that they could use arrays to store data which would help them shrink their code size.  
+
+*/
 
 import java.util.Scanner;
 
