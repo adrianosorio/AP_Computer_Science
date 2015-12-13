@@ -470,8 +470,10 @@ public class pg3a{
         
         if(pokemon_1_level_Max > pokemon_2_level_Max) {
             System.out.println(trainer1 + " has the highest level pokemon");
-        } else {
+        } else if(pokemon_1_level_Max < pokemon_2_level_Max){
             System.out.println(trainer2 + " has the highest level pokemon");
+        } else {
+            equal
         }
     }
     
