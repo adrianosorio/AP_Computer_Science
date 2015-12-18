@@ -4,7 +4,7 @@ The program was not as hard as i orginally thought and was easy to accomplish ho
 and i figured out that i had to cast the values as a float before i made it a float. I learned about how to use enumerate which is an interesting type and I also learned how to use objects
 with ease then I did before. I needed help mainly with enumerate however I also needed help with understanding why if one declares a variable as a double that the decimal value wont show up 
 unless casted. The assignment took me two hours to complete mainly due to the need to figure out why i was recieving 0 as an attack value and the best part of the assignment was understanding
-objects since previously I hardly used objects however now with my understanding i ca use them effectively. If I were the teacher I would have added more use to the enum since it seems pointless to have it in 
+objects since previously I hardly used objects however now with my understanding I can use them effectively. If I were the teacher I would have added more use to the enum since it seems pointless to have it in 
 this assignment other wise since it does not truly modify much in the program.
 */
 
@@ -12,12 +12,12 @@ public class Pokemon{
     
     //Global Variables
     
-    String name;
-    int defense;
-    int attack;
-    int level;
-    int health;
-    Type type;
+    private String name;
+    private int defense;
+    private int attack;
+    private int level;
+    private int health;
+    private Type type;
     
     public Pokemon(String p_name, int p_level, Type p_type) {//Pokemon Constructor simplest
         this.health = 50;
