@@ -1,3 +1,13 @@
+/*Adrian Osorio AP Computer Science 12/10/15 Assignment #2 310-227-5883 https://sites.google.com/a/esusdstudents.org/adrianosorio101/ adrianosorio101@gmail.com
+The warm-up exercises did provide great aid especially on practice it however some aspects of the project that did not rely on objects required me to do research on what ever I was uncertain on. 
+The program was not as hard as i orginally thought and was easy to accomplish however what was difficult was figuring out why certain decimal values were returning 0.0 when it would be 0.8 
+and i figured out that i had to cast the values as a float before i made it a float. I learned about how to use enumerate which is an interesting type and I also learned how to use objects
+with ease then I did before. I needed help mainly with enumerate however I also needed help with understanding why if one declares a variable as a double that the decimal value wont show up 
+unless casted. The assignment took me two hours to complete mainly due to the need to figure out why i was recieving 0 as an attack value and the best part of the assignment was understanding
+objects since previously I hardly used objects however now with my understanding i ca use them effectively. If I were the teacher I would have added more use to the enum since it seems pointless to have it in 
+this assignment other wise since it does not truly modify much in the program.
+*/
+
 public class Pokemon{
     
     //Global Variables
