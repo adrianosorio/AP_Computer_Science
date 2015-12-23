@@ -10,7 +10,7 @@ this assignment other wise since it does not truly modify much in the program.
 
 public class Pokemon{
     
-    //Global Variables
+    //Global Variables that will change bassed on call
     
     private String name;
     private int defense;
@@ -19,7 +19,7 @@ public class Pokemon{
     private int health;
     private Type type;
     
-    public Pokemon(String p_name, int p_level, Type p_type) {//Pokemon Constructor simplest
+    public Pokemon(String p_name, int p_level, Type p_type) {//Pokemon Constructor that only takes a name, level and pokemon type and sets all to a default value
         this.health = 50;
         this.attack = 50;
         this.defense = 50;
@@ -28,7 +28,7 @@ public class Pokemon{
         this.type = p_type;
     }
     
-    public Pokemon(String p_name, int p_level,  int p_health, int p_attack, int p_defense, Type p_type) {//pokemon constructor most effort
+    public Pokemon(String p_name, int p_level,  int p_health, int p_attack, int p_defense, Type p_type) {//pokemon constructor that requires more input instead of having the defaults in place
         this.health = p_health;
         this.attack = p_attack;
         this.defense = p_defense;
@@ -37,7 +37,7 @@ public class Pokemon{
         this.type = p_type;
     }
     
-    public int hurt(int damage) {
+    public int hurt(int damage) {//will take away health when called from the health of the current object
         if(damage > 0 ){
             return health -= damage;
             
@@ -46,7 +46,7 @@ public class Pokemon{
         }
     }
     
-    public int attack(Pokemon target, int base, float critical, float typeModifier, float STAB, float Random) {
+    public int attack(Pokemon target, int base, float critical, float typeModifier, float STAB, float Random) {//calculates the damage 
          int modifier = (int)(STAB * typeModifier * critical * 1 * Random);
          //System.out.println(modifier);
          float p1 = (float)((2*level)+10) / 250;
@@ -69,31 +69,31 @@ public class Pokemon{
          return firstP;
     }
     //Support methods listed below
-    public int getHealth() {
+    public int getHealth() {// returns value of health
         return health;
     }
     
-    public String getName() {
+    public String getName() {//returns the name
         return name;
     }
     
-    public Type getType() {
+    public Type getType() {//returns the type
         return type;
     }
     
-    public int getLevel() {
+    public int getLevel() {//retruns the level
         return level;
     }
         
-    public int getAttack() {
+    public int getAttack() {//retruns the Attack
         return attack;
     }
         
-    public int getDefense() {
+    public int getDefense() {//returns the defense
         return defense;
     }
     
-    public boolean isAlive() {
+    public boolean isAlive() {//returns whether the pokemon is still alive
         if(this.getHealth() <= 0) {
             return false;
         } else {
@@ -101,12 +101,12 @@ public class Pokemon{
         }
     }
     
-    public String toString() {
+    public String toString() {//returns a string with the name and level of the pokemon
         String m = " " + name + " " + level;
         return m;
     }
     
-    public boolean equals(Pokemon other) {
+    public boolean equals(Pokemon other) {//if the pokemon when compared weturn true then it will true or false depending if they are all equal.  
         String p = other.name;
         if(p.equalsIgnoreCase(name) && other.level == level){
             return true;
